@@ -1,3 +1,3 @@
-import Logo from "./images/Logo.gif"
+import Logo from "./images/logo.png"
 
 export { Logo }
