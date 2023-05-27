@@ -15,7 +15,7 @@ const Navbar = () => {
 	return (
 		<nav className="w-full h-20 lg:h-[12vh] sticky top-0 z-50 px-4 backdrop-blur transition-colors duration-500 bg-transparent">
 			<div
-				className={`max-w-[1440px] h-full mx-auto py-1 ${poppins.className} flex items-center justify-between`}
+				className={`max-w-[1440px] h-full mx-auto py-1  flex items-center justify-between ${poppins.className}`}
 			>
 				<Link href="/">
 					<motion.div
@@ -34,7 +34,7 @@ const Navbar = () => {
 						>
 							<Link
 								href="#home"
-								className="flex items-center gap-1 font-medium text-slate-500 hover:text-purple-500 cursor-pointer duration-300"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
 							>
 								Home
 							</Link>
@@ -46,9 +46,9 @@ const Navbar = () => {
 						>
 							<Link
 								href="#home"
-								className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
 							>
-								About
+								<span className="text-purple-500">01.</span> About
 							</Link>
 						</motion.div>
 						<motion.div
@@ -58,9 +58,9 @@ const Navbar = () => {
 						>
 							<Link
 								href="#home"
-								className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
 							>
-								Projects
+								<span className="text-purple-500">02.</span> Projects
 							</Link>
 						</motion.div>
 						<motion.div
@@ -70,9 +70,9 @@ const Navbar = () => {
 						>
 							<Link
 								href="#home"
-								className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
 							>
-								Contact
+								<span className="text-purple-500">03.</span> Contact
 							</Link>
 						</motion.div>
 						<motion.div
@@ -82,15 +82,15 @@ const Navbar = () => {
 						>
 							<Link
 								href="#home"
-								className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
 							>
-								Blog
+								<span className="text-purple-500">04.</span> Blog
 							</Link>
 						</motion.div>
 					</div>
 					<Link href="https://github.com/NaviTheCoderboi" target="__blank">
 						<motion.button
-							className="px-4 py-2 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300"
+							className="px-4 py-2 rounded-md text-slate-300 text-[13px] border border-purple-500 hover:text-purple-500 duration-300"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.5 }}
@@ -99,12 +99,12 @@ const Navbar = () => {
 						</motion.button>
 					</Link>
 				</div>
-				<div className="w-8 h-6 flex flex-col justify-between items-center mdl:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group">
-					<span className="w-full bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300 h-[2px]"></span>
-					<span className="w-full bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300 h-[2px]"></span>
-					<span className="w-full bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300 h-[2px]"></span>
-					<span className="w-full bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300 h-[2px]"></span>
-					<span className="w-full bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300 h-[2px]"></span>
+				<div className="w-8 h-6 flex flex-col justify-between items-center md:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group">
+					<span className="w-full bg-purple-500 inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300 h-[2px]"></span>
+					<span className="w-full bg-purple-500 inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300 h-[2px]"></span>
+					<span className="w-full bg-purple-500 inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300 h-[2px]"></span>
+					<span className="w-full bg-purple-500 inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300 h-[2px]"></span>
+					<span className="w-full bg-purple-500 inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300 h-[2px]"></span>
 				</div>
 			</div>
 		</nav>
