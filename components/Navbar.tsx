@@ -45,7 +45,7 @@ const Navbar = () => {
 							transition={{ delay: 0.1 }}
 						>
 							<Link
-								href="#home"
+								href="#about"
 								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
 							>
 								<span className="text-purple-500">01.</span> About

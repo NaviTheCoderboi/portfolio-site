@@ -9,7 +9,7 @@ const poppins = Poppins({
 	subsets: ["latin"],
 });
 
-const Center = () => {
+const Introduction = () => {
 	return (
 		<section
 			id="home"
@@ -60,4 +60,4 @@ const Center = () => {
 	);
 };
 
-export default Center;
+export default Introduction;
