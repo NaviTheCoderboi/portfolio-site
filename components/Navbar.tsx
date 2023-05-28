@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 const Navbar = () => {
 	return (
-		<nav className="w-full h-20 lg:h-[12vh] sticky top-0 z-50 px-4 backdrop-blur transition-colors duration-500 bg-transparent">
+		<nav className="w-full h-20 lg:h-[12vh] fixed top-0 z-50 px-4 backdrop-blur transition-colors duration-500 bg-transparent">
 			<div
 				className={`max-w-[1440px] h-full mx-auto py-1  flex items-center justify-between ${poppins.className}`}
 			>
