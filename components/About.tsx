@@ -8,13 +8,13 @@ const Languages = [
 		name: "Css",
 		icon: css3,
 		color: "bg-blue-500",
-		percentage: "60%",
+		percentage: "w-[60%]",
 	},
 	{
 		name: "Html",
 		icon: html5,
 		color: "bg-orange-500",
-		percentage: "80%",
+		percentage: "w-[80%]",
 	},
 	{
 		name: "Javascript",
@@ -26,13 +26,13 @@ const Languages = [
 		name: "Python",
 		icon: python,
 		color: "bg-green-500",
-		percentage: "80%",
+		percentage: "w-[80%]",
 	},
 	{
 		name: "Typescript",
 		icon: typescipt,
 		color: "bg-purple-500",
-		percentage: "60%",
+		percentage: "w-[60%]",
 	},
 ];
 
@@ -79,7 +79,7 @@ const About = () => {
 												<div>{Language.name}</div>
 												<div className="w-[200px] h-2 bg-gray-800 rounded-full">
 													<div
-														className={`${Language.color} h-full rounded-full w-[${Language.percentage}]`}
+														className={`${Language.color} h-full rounded-full ${Language.percentage}`}
 													></div>
 												</div>
 											</div>
