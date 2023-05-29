@@ -7,22 +7,32 @@ const Languages = [
 	{
 		name: "Css",
 		icon: css3,
+		color: "bg-blue-500",
+		percentage: "60%",
 	},
 	{
 		name: "Html",
 		icon: html5,
+		color: "bg-orange-500",
+		percentage: "80%",
 	},
 	{
 		name: "Javascript",
 		icon: javascript,
+		color: "bg-yellow-400",
+		percentage: "60%",
 	},
 	{
 		name: "Python",
 		icon: python,
+		color: "bg-green-500",
+		percentage: "80%",
 	},
 	{
 		name: "Typescript",
 		icon: typescipt,
+		color: "bg-purple-500",
+		percentage: "60%",
 	},
 ];
 
@@ -63,10 +73,15 @@ const About = () => {
 											height={50}
 											alt={Language.name}
 										/>
-										<div className="group-hover:flex absolute hidden left-16 top-[0.5rem] z-10">
-											<div className="w-5 h-5 bg-slate-700 rotate-45"></div>
-											<div className="text-slate-400 bg-slate-700  rounded-md  px-4 py-2 ">
-												{Language.name}
+										<div className="group-hover:block absolute hidden left-16 top-[0.1rem] z-10">
+											<div className="absolute w-5 h-5 bg-slate-700 rotate-45 top-[50%] -translate-y-1/2 -translate-x-1/3"></div>
+											<div className="flex flex-col items-center text-slate-400 bg-slate-700  rounded-md  px-4 py-2">
+												<div>{Language.name}</div>
+												<div className="w-[200px] h-2 bg-gray-800 rounded-full">
+													<div
+														className={`${Language.color} h-full rounded-full w-[${Language.percentage}]`}
+													></div>
+												</div>
 											</div>
 										</div>
 									</div>
