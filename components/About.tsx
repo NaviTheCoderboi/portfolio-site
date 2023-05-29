@@ -20,7 +20,7 @@ const Languages = [
 		name: "Javascript",
 		icon: javascript,
 		color: "bg-yellow-400",
-		percentage: "60%",
+		percentage: "w-[60%]",
 	},
 	{
 		name: "Python",
