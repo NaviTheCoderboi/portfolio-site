@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { Logo } from "@/public";
 import Link from "next/link";
@@ -12,6 +12,16 @@ const poppins = Poppins({
 });
 
 const Navbar = () => {
+	const ref = useRef<string | any>("");
+	const handleScroll = (
+		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+	) => {
+		event.preventDefault();
+		let href = event.currentTarget.href;
+		let targetId = href.replace(/.*\#/, "");
+		const element = document.getElementById(targetId);
+		element?.scrollIntoView({ behavior: "smooth" });
+	};
 	return (
 		<nav className="w-full h-20 lg:h-[12vh] sticky top-0 z-50 px-4 backdrop-blur transition-colors duration-500 bg-transparent">
 			<div
@@ -34,7 +44,9 @@ const Navbar = () => {
 						>
 							<Link
 								href="#home"
-								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300 navLink"
+								scroll={false}
+								onClick={handleScroll}
 							>
 								Home
 							</Link>
@@ -46,7 +58,9 @@ const Navbar = () => {
 						>
 							<Link
 								href="#about"
-								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300 navLink"
+								scroll={false}
+								onClick={handleScroll}
 							>
 								<span className="text-purple-500">01.</span> About
 							</Link>
@@ -58,7 +72,9 @@ const Navbar = () => {
 						>
 							<Link
 								href="#home"
-								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300 navLink"
+								scroll={false}
+								onClick={handleScroll}
 							>
 								<span className="text-purple-500">02.</span> Projects
 							</Link>
@@ -70,7 +86,9 @@ const Navbar = () => {
 						>
 							<Link
 								href="#home"
-								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300"
+								className="flex items-center gap-1 font-medium text-slate-300 hover:text-purple-500 cursor-pointer duration-300 navLink"
+								scroll={false}
+								onClick={handleScroll}
 							>
 								<span className="text-purple-500">03.</span> Contact
 							</Link>

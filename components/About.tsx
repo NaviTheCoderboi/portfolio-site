@@ -20,7 +20,7 @@ const Languages = [
 		name: "Javascript",
 		icon: javascript,
 		color: "bg-yellow-400",
-		percentage: "60%",
+		percentage: "w-[60%]",
 	},
 	{
 		name: "Python",
@@ -44,7 +44,7 @@ const About = () => {
 		>
 			<SectionTitle titleNo="01" title="About" />
 			<div className="flex flex-col lg:flex-row gap-16">
-				<div className="w-full lg:w-2/3 text-lg text-slate-400 font-medium flex flex-col gap-10">
+				<div className="w-full lg:w-1/2 text-lg text-slate-400 font-medium flex flex-col gap-10">
 					<div>
 						Hello there! I&apos;m Navinder Singh, a 14-year-old grade 9 student
 						from India. Coding is my passion and I love exploring the world of
@@ -63,7 +63,7 @@ const About = () => {
 					</div>
 					<div>
 						Here are few languages I know:
-						<div className="flex flex-row justify-start flex-wrap space-x-6 space-y-1 mt-4">
+						<div className="flex flex-row justify-start flex-wrap gap-6 mt-4">
 							{Languages.map((Language) => {
 								return (
 									<div key={Language.name} className="group relative">
@@ -90,13 +90,9 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-full lg:w-1/3 text-lg text-slate-400 font-medium">
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
-					dolore commodi nemo assumenda tempora error ullam corrupti quam iure
-					possimus accusamus eveniet fugit eligendi quia esse, optio impedit
-					architecto laudantium consectetur voluptate cupiditate non corporis
-					sint! Pariatur repudiandae magni non facilis et distinctio laboriosam
-					hic, consectetur magnam fugiat sunt exercitationem.
+				<div className="w-full lg:w-1/2 text-lg text-slate-400 font-medium">
+					Frameworks and Technologies I know:
+					<div className="flex flex-row justify-center flex-wrap gap-6 mt-4"></div>
 				</div>
 			</div>
 		</section>
