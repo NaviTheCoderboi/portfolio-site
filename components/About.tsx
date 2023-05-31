@@ -1,8 +1,62 @@
 "use client";
 import React, { useState } from "react";
 import SectionTitle from "@component/SectionTitle";
-import { css3, html5, javascript, python, typescipt } from "@/public";
+import {
+	css3,
+	html5,
+	javascript,
+	python,
+	typescipt,
+	docker,
+	git,
+	mongodb,
+	nextjs,
+	pg,
+	reactjs,
+	tailwindcss,
+	ubuntu,
+} from "@/public";
 import Image from "next/image";
+
+interface TechnologiesType {
+	name: string;
+	icon: any;
+}
+
+const Technologies: TechnologiesType[] = [
+	{
+		name: "Docker",
+		icon: docker,
+	},
+	{
+		name: "Git",
+		icon: git,
+	},
+	{
+		name: "MongoDb",
+		icon: mongodb,
+	},
+	{
+		name: "NextJs",
+		icon: nextjs,
+	},
+	{
+		name: "Postgres",
+		icon: pg,
+	},
+	{
+		name: "ReactJs",
+		icon: reactjs,
+	},
+	{
+		name: "TailwindCss",
+		icon: tailwindcss,
+	},
+	{
+		name: "Ubuntu",
+		icon: ubuntu,
+	},
+];
 
 interface LanguagesType {
 	name: string;
@@ -62,7 +116,7 @@ const About = () => {
 	return (
 		<section
 			id="about"
-			className="max-w-[1140px] px-4 py-10 lg:py-12 flex flex-col gap-8"
+			className="max-w-[1024px] mx-auto py-10 lg:py-12 flex flex-col gap-8"
 		>
 			<SectionTitle titleNo="01" title="About" />
 			<div className="flex flex-col lg:flex-row gap-16">
@@ -94,6 +148,7 @@ const About = () => {
 											width={50}
 											height={50}
 											alt={Language.name}
+											loading="lazy"
 										/>
 										<div className="group-hover:block absolute hidden left-16 top-0 z-10">
 											<div className="absolute w-5 h-5 bg-slate-700 rotate-45 top-[50%] -translate-y-1/2 -translate-x-1/3"></div>
@@ -128,6 +183,7 @@ const About = () => {
 												height={30}
 												alt={Language.name}
 												onClick={() => setSelected(Language.name)}
+												loading="lazy"
 											/>
 										</div>
 									);
@@ -148,9 +204,36 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-full lg:w-1/2 text-lg text-slate-400 font-medium">
+				<div className="w-full lg:w-1/2 text-lg text-slate-400 font-medium flex flex-col gap-10">
 					Frameworks and Technologies I know:
-					<div className="flex flex-row justify-center flex-wrap gap-6 mt-4"></div>
+					<div className="flex flex-row justify-start flex-wrap gap-6">
+						{Technologies.map((Technology) => {
+							return (
+								<div key={Technology.name} className="group relative">
+									<Image
+										src={Technology.icon}
+										width={100}
+										height={100}
+										alt={Technology.name}
+										loading="lazy"
+									/>
+									<div className="group-hover:block absolute hidden left-16 top-0 z-10">
+										<div className="absolute w-5 h-5 bg-slate-700 rotate-45 top-[50%] -translate-y-1/2 -translate-x-1/3"></div>
+										<div className="text-slate-400 bg-slate-700  rounded-md  px-4 py-2">
+											<div>{Technology.name}</div>
+										</div>
+									</div>
+								</div>
+							);
+						})}
+					</div>
+					Github stats:
+					<Image
+						src="https://github-readme-stats.vercel.app/api?username=NaviTheCoderboi&show_icons=true&theme=synthwave&border_color=0A1B2F&bg_color=0A1B2F"
+						alt="Loading..."
+						width={500}
+						height={250}
+					/>
 				</div>
 			</div>
 		</section>
