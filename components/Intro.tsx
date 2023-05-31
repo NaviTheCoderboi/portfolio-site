@@ -46,16 +46,15 @@ const Introduction = () => {
 				skilled web developer, combining my love for science and technology to
 				make a positive impact in the world.
 			</motion.p>
-			<Link href="/Blog">
-				<motion.button
-					className={`w-52 h-14 text-sm ${poppins.className} border border-purple-500 rounded-md text-slate-300 tracking-wide hover:text-purple-500 duration-300`}
-					initial={{ y: 10, opacity: 0 }}
-					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 0.5, delay: 0.8 }}
-				>
-					Check out latest posts!
-				</motion.button>
-			</Link>
+
+			<motion.button
+				className={`w-52 h-14 text-sm ${poppins.className} border border-purple-500 rounded-md text-slate-300 tracking-wide hover:text-purple-500 duration-300`}
+				initial={{ y: 10, opacity: 0 }}
+				animate={{ y: 0, opacity: 1 }}
+				transition={{ duration: 0.5, delay: 0.8 }}
+			>
+				<Link href="/Blog">Check out latest posts!</Link>
+			</motion.button>
 		</section>
 	);
 };

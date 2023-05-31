@@ -1,9 +1,17 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import SectionTitle from "@component/SectionTitle";
 import { css3, html5, javascript, python, typescipt } from "@/public";
 import Image from "next/image";
 
-const Languages = [
+interface LanguagesType {
+	name: string;
+	icon: any;
+	color: string;
+	percentage: string;
+}
+
+const Languages: LanguagesType[] = [
 	{
 		name: "Css",
 		icon: css3,
@@ -37,10 +45,24 @@ const Languages = [
 ];
 
 const About = () => {
+	const [selected, setSelected] = useState("Css");
+	const getColorAndPercentage = (selected: string) => {
+		let item =
+			selected == "Css"
+				? Languages[0]
+				: selected == "Html"
+				? Languages[1]
+				: selected == "Javascript"
+				? Languages[2]
+				: selected == "Python"
+				? Languages[3]
+				: Languages[4];
+		return item;
+	};
 	return (
 		<section
 			id="about"
-			className="max-w-[1024px] mx-auto py-10 lg:py-12 flex flex-col gap-8"
+			className="max-w-[1140px] px-4 py-10 lg:py-12 flex flex-col gap-8"
 		>
 			<SectionTitle titleNo="01" title="About" />
 			<div className="flex flex-col lg:flex-row gap-16">
@@ -63,7 +85,7 @@ const About = () => {
 					</div>
 					<div>
 						Here are few languages I know:
-						<div className="flex flex-row justify-start flex-wrap gap-6 mt-4">
+						<div className="hidden md:flex flex-row justify-start flex-wrap gap-6 mt-4">
 							{Languages.map((Language) => {
 								return (
 									<div key={Language.name} className="group relative">
@@ -73,9 +95,9 @@ const About = () => {
 											height={50}
 											alt={Language.name}
 										/>
-										<div className="group-hover:block absolute hidden left-16 top-[0.1rem] z-10">
+										<div className="group-hover:block absolute hidden left-16 top-0 z-10">
 											<div className="absolute w-5 h-5 bg-slate-700 rotate-45 top-[50%] -translate-y-1/2 -translate-x-1/3"></div>
-											<div className="flex flex-col items-center text-slate-400 bg-slate-700  rounded-md  px-4 py-2">
+											<div className="flex flex-col items-center text-slate-400 bg-slate-700  rounded-md  px-4 py-2 space-y-2">
 												<div>{Language.name}</div>
 												<div className="w-[200px] h-2 bg-gray-800 rounded-full">
 													<div
@@ -87,6 +109,42 @@ const About = () => {
 									</div>
 								);
 							})}
+						</div>
+						<div className="md:hidden block">
+							<div className="flex flex-row justify-center flex-wrap gap-4 mt-4">
+								{Languages.map((Language) => {
+									return (
+										<div
+											key={Language.name}
+											className={`${
+												selected == Language.name
+													? "border-b-[1.5px] border-b-purple-500"
+													: ""
+											} p-2`}
+										>
+											<Image
+												src={Language.icon}
+												width={30}
+												height={30}
+												alt={Language.name}
+												onClick={() => setSelected(Language.name)}
+											/>
+										</div>
+									);
+								})}
+							</div>
+							<div className="flex flex-col items-center text-slate-400 bg-slate-700  rounded-md  p-4 space-y-2 mt-3">
+								<div>{selected}</div>
+								<div className="w-[200px] h-2 bg-gray-800 rounded-full">
+									<div
+										className={`${
+											getColorAndPercentage(selected).color
+										} h-full rounded-full ${
+											getColorAndPercentage(selected).percentage
+										}`}
+									></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
