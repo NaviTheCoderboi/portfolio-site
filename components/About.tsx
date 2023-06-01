@@ -17,6 +17,7 @@ import {
 	ubuntu,
 } from "@/public";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface TechnologiesType {
 	name: string;
@@ -121,28 +122,48 @@ const About = () => {
 			<SectionTitle titleNo="01" title="About" />
 			<div className="flex flex-col lg:flex-row gap-16">
 				<div className="w-full lg:w-1/2 text-lg text-slate-400 font-medium flex flex-col gap-10">
-					<div>
+					<motion.div
+						initial={{ y: 10, opacity: 0 }}
+						whileInView={{ y: 0, opacity: 1 }}
+						transition={{ duration: 0.5, delay: 0.6 }}
+					>
 						Hello there! I&apos;m Navinder Singh, a 14-year-old grade 9 student
 						from India. Coding is my passion and I love exploring the world of
 						web development. Alongside my fascination with technology, I also
 						aspire to become a doctor in the future. The combination of medicine
 						and technology excites me, as it allows me to contribute to
 						healthcare and make a positive impact on people&apos;s lives.
-					</div>
-					<div>
+					</motion.div>
+					<motion.div
+						initial={{ y: 10, opacity: 0 }}
+						whileInView={{ y: 0, opacity: 1 }}
+						transition={{ duration: 0.5, delay: 0.6 }}
+					>
 						Being from India, I am fortunate to be exposed to diverse cultures
 						and experiences, which helps broaden my perspective. Through my
 						portfolio site, I hope to share my journey, showcase my coding
 						projects, and inspire others to pursue their passions. Join me as I
 						embark on this exciting adventure of merging my interests and making
 						a difference!
-					</div>
+					</motion.div>
 					<div>
-						Here are few languages I know:
+						<motion.div
+							initial={{ y: 10, opacity: 0 }}
+							whileInView={{ y: 0, opacity: 1 }}
+							transition={{ duration: 0.5, delay: 0.6 }}
+						>
+							Here are few languages I know:
+						</motion.div>
 						<div className="hidden md:flex flex-row justify-start flex-wrap gap-6 mt-4">
 							{Languages.map((Language) => {
 								return (
-									<div key={Language.name} className="group relative">
+									<motion.div
+										key={Language.name}
+										className="group relative"
+										initial={{ opacity: 0 }}
+										whileInView={{ opacity: 1 }}
+										transition={{ duration: 0.5, delay: 0.6 }}
+									>
 										<Image
 											src={Language.icon}
 											width={50}
@@ -161,7 +182,7 @@ const About = () => {
 												</div>
 											</div>
 										</div>
-									</div>
+									</motion.div>
 								);
 							})}
 						</div>
@@ -169,13 +190,16 @@ const About = () => {
 							<div className="flex flex-row justify-center flex-wrap gap-4 mt-4">
 								{Languages.map((Language) => {
 									return (
-										<div
+										<motion.div
 											key={Language.name}
 											className={`${
 												selected == Language.name
 													? "border-b-[1.5px] border-b-purple-500"
 													: ""
 											} p-2`}
+											initial={{ opacity: 0 }}
+											whileInView={{ opacity: 1 }}
+											transition={{ duration: 0.5, delay: 0.6 }}
 										>
 											<Image
 												src={Language.icon}
@@ -185,11 +209,16 @@ const About = () => {
 												onClick={() => setSelected(Language.name)}
 												loading="lazy"
 											/>
-										</div>
+										</motion.div>
 									);
 								})}
 							</div>
-							<div className="flex flex-col items-center text-slate-400 bg-slate-700  rounded-md  p-4 space-y-2 mt-3">
+							<motion.div
+								className="flex flex-col items-center text-slate-400 bg-slate-700  rounded-md  p-4 space-y-2 mt-3"
+								initial={{ opacity: 0, x: -10 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.5, delay: 0.6 }}
+							>
 								<div>{selected}</div>
 								<div className="w-[200px] h-2 bg-gray-800 rounded-full">
 									<div
@@ -200,30 +229,53 @@ const About = () => {
 										}`}
 									></div>
 								</div>
-							</div>
+							</motion.div>
 						</div>
 					</div>
 				</div>
 				<div className="w-full lg:w-1/2 text-lg text-slate-400 font-medium flex flex-col gap-10">
 					Frameworks and Technologies I know:
-					<div className="flex flex-row justify-start flex-wrap gap-6">
+					<div className="flex flex-row justify-center md:justify-start flex-wrap gap-6">
 						{Technologies.map((Technology) => {
 							return (
-								<div key={Technology.name} className="group relative">
-									<Image
-										src={Technology.icon}
-										width={100}
-										height={100}
-										alt={Technology.name}
-										loading="lazy"
-									/>
-									<div className="group-hover:block absolute hidden left-16 top-0 z-10">
-										<div className="absolute w-5 h-5 bg-slate-700 rotate-45 top-[50%] -translate-y-1/2 -translate-x-1/3"></div>
-										<div className="text-slate-400 bg-slate-700  rounded-md  px-4 py-2">
-											<div>{Technology.name}</div>
+								<motion.div
+									key={Technology.name}
+									className="group relative"
+									initial={{ opacity: 0 }}
+									whileInView={{ opacity: 1 }}
+									transition={{ duration: 0.5, delay: 0.6 }}
+								>
+									<div className="group relative hidden md:block">
+										<Image
+											src={Technology.icon}
+											width={100}
+											height={100}
+											alt={Technology.name}
+											loading="lazy"
+										/>
+										<div className="group-hover:block absolute hidden left-16 top-0 z-10">
+											<div className="absolute w-5 h-5 bg-slate-700 rotate-45 top-[50%] -translate-y-1/2 -translate-x-1/3"></div>
+											<div className="text-slate-400 bg-slate-700  rounded-md  px-4 py-2">
+												<div>{Technology.name}</div>
+											</div>
 										</div>
 									</div>
-								</div>
+									<div className="group relative block md:hidden">
+										<Image
+											src={Technology.icon}
+											width={50}
+											height={50}
+											alt={Technology.name}
+											loading="lazy"
+										/>
+										<div className="group-hover:block absolute hidden left-16 top-0 z-10">
+											<div className="absolute w-5 h-5 bg-slate-700 rotate-45 top-[50%] -translate-y-1/2 -translate-x-1/3"></div>
+											<div className="text-slate-400 bg-slate-700  rounded-md  px-4 py-2">
+												<div>{Technology.name}</div>
+											</div>
+										</div>
+									</div>
+								</motion.div>
 							);
 						})}
 					</div>
@@ -233,6 +285,14 @@ const About = () => {
 						alt="Loading..."
 						width={500}
 						height={250}
+						className="hidden md:block"
+					/>
+					<Image
+						src="https://github-readme-stats.vercel.app/api?username=NaviTheCoderboi&show_icons=true&theme=synthwave&border_color=0A1B2F&bg_color=0A1B2F"
+						alt="Loading..."
+						className="block md:hidden"
+						height={200}
+						width={400}
 					/>
 				</div>
 			</div>
