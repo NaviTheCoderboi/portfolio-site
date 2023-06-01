@@ -220,7 +220,7 @@ const About = () => {
 								transition={{ duration: 0.5, delay: 0.6 }}
 							>
 								<div>{selected}</div>
-								<div className="w-[200px] h-2 bg-gray-800 rounded-full">
+								<div className="w-[60vw] h-2 bg-gray-800 rounded-full">
 									<div
 										className={`${
 											getColorAndPercentage(selected).color
