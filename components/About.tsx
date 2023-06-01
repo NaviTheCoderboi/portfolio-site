@@ -285,14 +285,7 @@ const About = () => {
 						alt="Loading..."
 						width={500}
 						height={250}
-						className="hidden md:block"
-					/>
-					<Image
-						src="https://github-readme-stats.vercel.app/api?username=NaviTheCoderboi&show_icons=true&theme=synthwave&border_color=0A1B2F&bg_color=0A1B2F"
-						alt="Loading..."
-						className="block md:hidden"
-						height={200}
-						width={400}
+						className="w-[80w] h-[200px] md:w-[500px] md:h-[250px]"
 					/>
 				</div>
 			</div>
